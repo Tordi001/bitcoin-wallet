@@ -1,0 +1,146 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+
+	<style>
+		/* This aprt is for the header part */
+		header{
+			display: flex;
+			justify-content: space-between;
+			background-color: orange;
+			padding: 10px;
+		}
+		header button {
+			border: none;
+			border-radius: 10px;
+		}
+
+		@media (min-width: 360px) and (max-width: 740px) {
+			header{
+			font-size: 15px;
+			}
+		}
+
+		@media (min-width: 320px) and (max-width: 658px) {
+			header{
+			font-size: 10px;
+			}
+		}
+
+
+		@media (min-width: 360px) and (max-width: 740px) {
+			
+		}
+
+		@media (min-width: 360px) and (max-width: 740px) {
+			
+		}
+
+		@media (min-width: 360px) and (max-width: 740px) {
+			
+		}
+
+
+
+
+		/* This part is for the main part */
+		form {
+			margin-top: 40px;
+		}
+		#submit{
+			
+		}
+		
+		form input {
+			margin-top: 30px;
+			padding: 10px 30% 10px 0;
+		}
+
+
+
+		/* This part is for the footer */
+		footer{
+			background-color: black;
+			color: white;
+			padding: 10px;
+			font-size: 13px;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		#footer-one{
+			display: flex;
+			justify-content: space-between;
+			padding-right: 80px;
+			padding-left: 80px;
+		}
+
+
+	</style>
+
+
+</head>
+<body>
+	
+	<header>
+		<h1 style="text-align: center;">BITCOIN WALLET</h1>
+		<button onclick="sihnup()">Sign-Up</button>
+	</header>
+
+	
+
+	<main>
+
+		<form action="" method="POST" style="text-align: center;">
+			{% csrf_token %}
+			<h2>Sign-In</h2>
+
+			{% for message in messages %}
+			<h3>{{message}}</h3>
+			{% endfor %}
+			
+			<label>Username:</label>
+			<input type="text" name="username" id="" placeholder="username..."><br>
+			<label>Password:</label>
+			<input type="password" name="password" id="" placeholder="password..."><br>
+			<input type="submit" name="submit" id="submit">
+			<p>forgotten password <a href="" style="text-decoration: none;">Click here</a></p>
+		</form>
+
+	</main>
+
+	<footer>
+		<div id="footer-one">
+			<div id="footer-one-one">
+				<h3>Participate</h3>
+				<ul style="list-style: none;">
+					<li>Support Bitcoin</li>
+					<li>Buy Bitcoin</li>
+					<li>Running a full node</li>
+					<li>Development</li>
+				</ul>
+			</div>
+			<div id="footer-one-two">
+				<h3>Others</h3>
+				<ul style="list-style: none;">
+					<li>Avoid Scams!!</li>
+					<li>Legal</li>
+					<li>Privacy policy</li>
+					<li>press</li>
+					<li>About bitcoin.org</li>
+					<li>Blog</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="footer-two">
+			<p style="text-align: center;">&copy; 2023, all right reserve</p>
+		</div>
+	</footer>
+
+</body>
+</html>

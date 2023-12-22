@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <style>
+		/* This aprt is for the header part */
+		header{
+			display: flex;
+			justify-content: space-between;
+			background-color: orange;
+			padding: 10px;
+		}
+		header button {
+			border: none;
+			border-radius: 10px;
+		}
+
+
+
+		/* This part is for the main part */
+
+
+
+		/* This part is for the footer */
+		footer{
+			background-color: black;
+			color: white;
+			padding: 10px;
+			font-size: 13px;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		#footer-one{
+			display: flex;
+			justify-content: space-between;
+			padding-right: 80px;
+			padding-left: 80px;
+		}
+	</style>
+</head>
+<body>
+    
+    <header>
+		<h1 style="text-align: center;">BITCOIN WALLET</h1>
+		<button>Sign-In</button>
+	</header>
+
+    <main>
+        <div id="main-one">
+            
+        </div>
+        <div id="main-two">
+
+
+            {% if user.is_authenticated %}
+            <label>First-Name</label>
+            <p>{{user.email}}</p><br>
+            <label>Last-Name</label>
+            <p>{{user.lastname}}</p>
+            {% else %}
+            <h2>welcome Dear Value</h2>
+            {% endif %}
+
+        </div>
+    </main>
+
+    <footer>
+        footer
+		<div id="footer-one">
+			<div id="footer-one-one">
+				<h3>Participate</h3>
+				<ul style="list-style: none;">
+					<li>Support Bitcoin</li>
+					<li>Buy Bitcoin</li>
+					<li>Running a full node</li>
+					<li>Development</li>
+				</ul>
+			</div>
+			<div id="footer-one-two">
+				<h3>Others</h3>
+				<ul style="list-style: none;">
+					<li>Avoid Scams!!</li>
+					<li>Legal</li>
+					<li>Privacy policy</li>
+					<li>press</li>
+					<li>About bitcoin.org</li>
+					<li>Blog</li>
+				</ul>
+			</div>
+		</div>
+
+        <div id="footer-two">
+            <h3>BLOCKCHAIN</h3>
+            <ul>
+                <li><i class="fa fa-twitter" aria-hidden="true"></i><a href="">Twitter</a></li>
+                <li>Instagram</li>
+                <li>Medium</li>
+                <li>Facebook</li>
+                <li>Whatsapp</li>
+            </ul>
+        </div>
+
+		<div id="footer-three">
+			<p style="text-align: center;">&copy; 2023, all right reserve</p>
+		</div>
+	</footer>
+
+</body>
+</html>

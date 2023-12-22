@@ -1,0 +1,303 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+
+<style>
+  /* This aprt is for the header par  */
+  header{
+    background-color: orange;
+    color: black;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  header ul{
+    display: flex;
+    list-style: none;
+  }
+  header ul li{
+    padding: 10px;
+  }
+  header ul li:hover{
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  header ul li a{
+    color: black;
+    text-decoration: none;
+  }
+
+  header ul li a i{
+    padding: 5px;
+  }
+
+  header #header-two button{
+    background-color: orange;
+  }
+
+  @media (min-width: 360px) and (max-width: 740px) {
+    header{
+      font-size: 15px;
+    }
+  }
+
+  @media (min-width: 320px) and (max-width: 658px) {
+    header{
+      font-size: 12px;
+    }
+  }
+
+  @media (min-width: 414px) and (max-width: 859px) {
+    header{
+      font-size: 12px;
+    }
+  }
+
+  @media (min-width: 430px) and (max-width: 932px) {
+    header{
+      font-size: 15px;
+      
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    header{
+      font-size: 20px;
+    }
+  }
+
+
+
+
+  /* This part is for the main part */
+  .all{
+    background-color: azure;
+    padding: 10px;
+  }
+  #main-one{
+    font-weight: bolder;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+
+
+
+
+  /* This part is for the footer */
+  footer{
+			background-color: black;
+			color: white;
+			padding: 10px;
+			font-size: 13px;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		#footer-one{
+			display: flex;
+			justify-content: space-between;
+			padding-right: 80px;
+			padding-left: 80px;
+		}
+
+
+
+</style>
+
+
+<body>
+  
+  <header>
+    <div id="header-one">
+      <h2>BITCOIN WALLET</h2>
+    </div>
+    <div id="header-two">
+      <ul>
+
+        {% if user.is_authenticated %}
+        <li><a href="index"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+        <li><a href="profile"><i class="fa fa-user" aria-hidden="true"></i>profile</a></li>
+        <li><a href="logout"><i class="fa fa-power-off" aria-hidden="true"></i>Logout</a></li>
+        {% else %}
+        <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+        <li><a href="register.html"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+        <li><a href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li>
+        {% endif %}
+      </ul>
+
+
+      <!-- {% if user.is_authenticated %}
+      <p><i class="fa fa-power-off" aria-hidden="true"></i>Logout</p>
+      {% else %}
+      
+      {% endif %} -->
+
+
+
+    </div>
+  </header><hr>
+
+  <main>
+    <div id="main-one" class="all">
+      {% if user.is_authenticated %}
+      <h2>Welcome, {{user.username}}!</h2>
+      {% else %}
+      <h2>welcome To Bitcoin Wallet</h2>
+      {% endif %}
+    </div>
+
+
+    {% if user.is_authenticated %}
+    <div id="main-two" class="all">
+      <h2>Table of Contents</h2>
+      <ol>
+        <li>What is Bitcoin?</li>
+        <li>The history of Bitcoin</li>
+        <li>What gives Bitcoin value?</li>
+        <li>How does Bitcoin work?</li>
+        <li>Who controls Bitcoin?</li>
+        <li>Why does Bitcoin exist? Is it needed?</li>
+        <li>Is Bitcoin legal?</li>
+        <li>Can bitcoin be stolen?</li>
+        <li>Can the Bitcoin network be shut down or hacked?
+        </li>
+      </ol>
+    </div>
+
+    <div id="main-three" class="all">
+      <h2>What is Bitcoin?</h2>
+      <p>Bitcoin is a decentralized digital asset. It is a new type of asset that joins the ranks of traditional assets such as cash, gold, and real estate. Use the multichain Bitcoin.com Wallet app, trusted by millions to safely and easily buy, sell, trade, and manage bitcoin and the most popular cryptocurrencies.</p>
+    </div><hr>
+
+    <div id="main-four" class="all">
+      <h2>The history of Bitcoin</h2>
+      <p>On Oct. 31, 2008, an anonymous individual who went by the name of Satoshi Nakamoto published a white paper detailing a design for a “peer-to-peer electronic cash system,” a global financial infrastructure based on cryptographic proof instead of trust. Over a decade later, cryptocurrencies are now being discussed regularly in the context of global economic policy, with some nations even researching and developing their own digital currencies. </p>
+      <p>The underlying data structure of Bitcoin BTC tickers down $44,009, often referred to as the blockchain, has also been researched and implemented in use cases ranging from supply chain management to logistics, cross-enterprise resource planning, energy trading, decentralized autonomous organizations and much more. </p>
+    </div><hr>
+
+    <div id="main-five" class="all">
+      <h2>What gives Bitcoin value?</h2>
+      <p>The value of Bitcoin comes from two connected aspects that support and reinforce each other:</p>
+      <ol>
+        <li>Its framework</li>
+        <li>Its network effects</li>
+      </ol>
+      <p>When a network grows, its utility grows also. The classic example is a telephone network. When there are only a few people on the network, its hardly valuable. But when you can call anyone, the network is more valuable. The same is true of money networks.</p>
+      <p>Bitcoin is often compared to gold because it has similar characteristics. Namely:</p>
+      <ul>
+        <li>It has a limited supply</li>
+        <p>There will only ever be 21 million bitcoins, which means Bitcoin is rare compared to other things that served as money like seashells, salt, and cash.</p>
+        <p>When things are not rare, they have less value over time. And if that is used as money, it leads to less purchasing power, which is the amount of goods and services that can be purchased with a set amount of money.</p>
+        <li>It's easily divisible</li>
+        <p>You can divide one bitcoin into 100 million pieces (100 million sats), whereas 1 US dollar can be broken into 100 pieces (100 cents). This means that the world will never “run out" of Bitcoin. It can always be divided into smaller and smaller pieces.</p>
+        <li>It's durable</li>
+        <p>The internet is durable because it is made up of a global network of computer systems. Similarly, a huge globally distributed network of independently operated computers tracks Bitcoin ownership. This ensures that no bitcoin is lost.</p>
+        <p>Beyond this, Bitcoin has a few other important features which improve upon gold's monetary properties. These are:</p>
+        <li>It's more portable</li>
+        <p>Sending any amount of bitcoin to anyone in the world can be done in minutes.</p>
+        <li>It’s more easily verified</li>
+        <p>It's easy to verify the authenticity of bitcoin. Actually, it's effectively impossible to transact with fake bitcoin, as opposed to many gold scams. The many gold verification methods attest to that.</p>
+      </ul>
+    </div><hr>
+
+    <div id="main-six" class="all">
+      <h2>How does Bitcoin work?</h2>
+      <p>First, let’s begin with how money usually appears in a bank. The money in a bank appears on a ledger. Transactions such as salary and rent are recorded as deposits and withdrawals that modify the total balance.</p>
+      <p>You must trust that the bank keeps track of all transactions and balances on their ledger. In this way, the bank is a trusted third party, or middle man. Unfortunately, banks make mistakes often enough to warrant the existence of bank reconciliation statements which are used by companies and individuals to catch bank mistakes.</p>
+      <p>Bitcoin also has a ledger, but it's a decentralized ledger. Unlike at a bank or credit card company, transactions on the Bitcoin ledger are verified by a decentralized network of “nodes." Nodes are people who run the Bitcoin software, and anyone can be a node, without asking for permission.</p>
+      <p>Bitcoin’s ledger can only append new transactions. In other words, data can only be added, it cannot be edited or subtracted. This is important because it makes it next to impossible to change the history of the Bitcoin ledger.</p>
+      <p>The appended transactions are put into a block. The block is cryptographically connected to the previous block, making a chain of blocks (“blockchain") that creates an unbroken record going back to the very first transaction.</p>
+      <p>The nodes (again, people) in the Bitcoin network must agree that transactions are valid despite not trusting each other, and with the possibility of someone trying to lie about a transaction.
+
+        Having a group of strangers agree on the truth of something despite not being able to trust one another has been a difficult question for a long time – and it’s why global finance has always relied on a few trusted sources of truth like banks. Bitcoin was the first to solve this problem in a practical way.
+        
+        The Bitcoin network operates on a set of rules. These rules govern things like making sure balances don’t spend more than they have, as well as other things like how many bitcoins can be created. Every time there is a new transaction, nodes check to make sure the transaction follows the rules, then pass it along to other nodes they are connected to.</p>
+        <p>The nodes in the decentralized network must agree that transactions are valid before the transaction can be added to the ledger, and the process of nodes agreeing is called consensus. There are several consensus mechanisms in the world of cryptoassets, but the one used by Bitcoin is called proof of work (PoW).</p>
+        <p>PoW is a mathematically guaranteed way to arrive at consensus, and it works by forcing participants to prove that they’ve completed some arbitrary calculations that consume energy (work). The requirement to spend energy is important because it makes it extremely costly for bad actors to participate.</p>
+        <p>The group of people who engage in Proof of Work in Bitcoin are called “miners." Bitcoin mining, which is the process of 'minting' (creating) new bitcoins, is an essential component of the network's system for arriving at consensus (agreeing to the 'truth') without relying on a centralized authority. Mining is also critical for ensuring the security of the network.</p>
+    </div><hr>
+
+    <div id="main-seven" class="all">
+      <h2>Who controls Bitcoin?</h2>
+      <p>You may be asking, “Where did Bitcoin come from and how are its rules decided?"</p>
+      <p>The Bitcoin protocol is open-source software that was originally created by Bitcoin’s pseudonymous founder, Satoshi Nakamoto. Anyone in the world can run the software, and thousands of people have contributed to its development since launching in 2009. The group of people who voluntarily run the software form the Bitcoin network.</p>
+      <p>The Bitcoin protocol can change. And the way it changes is influenced by a much larger group of people than just those who run the software. This larger group includes the millions of holders of Bitcoin, the businesses that use Bitcoin, developers, and anyone else with a stake in Bitcoin. Collectively they decide what Bitcoin is.</p>
+    </div><hr>
+
+    <div id="main-eight" class="all">
+      <h2>Why does Bitcoin exist? Is it needed?</h2>
+      <p>Bitcoin is an alternative form of digital money that is not issued by nation states or corporations and is not controlled by financial intermediaries like banks. People who find value in this new form of money include investors, libertarians, the financially oppressed (no matter where they live), and others.</p>
+    </div><hr>
+
+    <div id="main-nine" class="all">
+      <h2>Is Bitcoin legal?</h2>
+      <p>Bitcoin is perfectly legal to hold in most countries, including all Western democracies, where freedom of speech is enshrined (Bitcoin is, after all, nothing more than open-source code). Some countries have attempted to ban the use of Bitcoin, but due to Bitcoin’s decentralized nature, it’s virtually impossible to enforce total bans.</p>
+    </div><hr>
+
+    <div id="main-nine" class="all">
+      <h2>Can bitcoin be stolen?</h2>
+      <p>With a few simple precautions in place, holding bitcoin is extremely secure. The vast majority of instances of bitcoin being “stolen" involve the victim mistakenly sending it to the attacker rather than a bitcoin wallet being hacked or stolen.</p>
+    </div><hr>
+
+    <div id="main-ten" class="all">
+      <h2>Can the Bitcoin network be shut down or hacked?</h2>
+      <p>Shutting down the Bitcoin network would require shutting down the entire global internet and cutting all electricity. While it’s technically possible to “hack" or take over the entire Bitcoin network, doing so would cost billions of dollars and require a massive coordinated effort involving global chip manufacturers. Importantly, even if successful, a hacker would not be enriched by the attack since it would destroy the value of the Bitcoin network.</p>
+    </div><hr>
+
+    {% else %}
+    <div id="main-eleven">
+      <h2>This website teaches you what is bitcoin and what it is used for</h2>
+      <p>Dear value visitor, after reading this blog you will fully understand the concept of bitcoin and how it works, you will get the basics of bitcoin and the fundamentals. First thing you need to do is to get started by signning up into our platform if you don have any account.</p>
+      <button style="padding: 20px; align-items: center; margin: 20px;">Kindly Click on the button above to get started</button>
+    </div>
+
+    {% endif %}
+
+
+
+  </main>
+
+  <footer>
+		<div id="footer-one">
+			<div id="footer-one-one">
+				<h3>Participate</h3>
+				<ul style="list-style: none;">
+					<li>Support Bitcoin</li>
+					<li>Buy Bitcoin</li>
+					<li>Running a full node</li>
+					<li>Development</li>
+				</ul>
+			</div>
+			<div id="footer-one-two">
+				<h3>Others</h3>
+				<ul style="list-style: none;">cmd
+					<li>Avoid Scams!!</li>
+					<li>Legal</li>
+					<li>Privacy policy</li>
+					<li>press</li>
+					<li>About bitcoin.org</li>
+					<li>Blog</li>
+				</ul>
+			</div>
+		</div>
+
+    <div id="footer-three">
+      <h3>Stay Connected:</h3>
+
+  </div>
+
+		<div id="footer-two">
+			<p style="text-align: center;">&copy; 2023, By Tordi Blog... all right reserve.</p>
+		</div>
+	</footer>
+
+
+</body>
+</html>

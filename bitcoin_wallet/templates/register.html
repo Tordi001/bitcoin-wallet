@@ -1,0 +1,143 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style>
+		/* This aprt is for the header part */
+		header{
+			display: flex;
+			justify-content: space-between;
+			background-color: orange;
+			padding: 10px;
+		}
+		header button {
+			border: none;
+			border-radius: 10px;
+		}
+
+		
+		@media (min-width: 360px) and (max-width: 740px) {
+			header{
+			font-size: 15px;
+			}
+		}
+
+		@media (min-width: 360px) and (max-width: 740px) {
+			
+		}
+
+		@media (min-width: 360px) and (max-width: 740px) {
+			
+		}
+
+		@media (min-width: 360px) and (max-width: 740px) {
+			
+		}
+
+		@media (min-width: 360px) and (max-width: 740px) {
+			
+		}
+
+
+
+
+
+		/* This part is for the main part */
+		form {
+			margin-top: 40px;
+		}
+		form input {
+			margin-top: 30px;
+			padding: 10px 30% 10px 0;
+		}
+		main{
+			text-align: center;
+		}
+		
+
+
+
+		/* This part is for the footer */
+		footer{
+			background-color: black;
+			color: white;
+			padding: 10px;
+			font-size: 13px;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		#footer-one{
+			display: flex;
+			justify-content: space-between;
+			padding-right: 80px;
+			padding-left: 80px;
+		}
+	</style>
+</head>
+<body>
+	
+	<header>
+		<h1 style="text-align: center;">BITCOIN WALLET</h1>
+		<button>Sign-In</button>
+	</header>
+
+	<main>
+		<div id="main-one">
+			<h1>Sign-Up Here</h1>
+		</div>
+		<div id="main-two">
+			<form method="POST" action="">
+				{% csrf_token %}
+				<label>First Name:</label>
+				<input type="text" name="firstname" id=""><br>
+				<label>Last-Name:</label>
+				<input type="text" name="lastname" id=""><br>
+				<label>Username:</label>
+				<input type="text" name="username" id=""><br>
+				<label>Email:</label>
+				<input type="email" name="email" id=""><br>
+				<label>Pasword:</label>
+				<input type="password" name="password" id=""><br>
+				<label>Re-Type Password</label>
+				<input type="password" name="password2" id=""><br>
+				<input type="submit" name="" id="">
+				<p>forgotten password <a href="" style="text-decoration: none;">Click here</a></p>
+			</form>
+		</div>
+	</main>
+
+	<footer>
+		<div id="footer-one">
+			<div id="footer-one-one">
+				<h3>Participate</h3>
+				<ul style="list-style: none;">
+					<li>Support Bitcoin</li>
+					<li>Buy Bitcoin</li>
+					<li>Running a full node</li>
+					<li>Development</li>
+				</ul>
+			</div>
+			<div id="footer-one-two">
+				<h3>Others</h3>
+				<ul style="list-style: none;">
+					<li>Avoid Scams!!</li>
+					<li>Legal</li>
+					<li>Privacy policy</li>
+					<li>press</li>
+					<li>About bitcoin.org</li>
+					<li>Blog</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="footer-two">
+			<p style="text-align: center;">&copy; 2023, all right reserve</p>
+		</div>
+	</footer>
+
+</body>
+</html>
